@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: local('Consolas'), local('Courier New');
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0f;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  image-rendering: pixelated;
+}
+
+#game-root {
+  position: relative;
+  width: 960px;
+  height: 540px;
+  margin: 0 auto;
+  background: #000;
+  overflow: hidden;
+  box-shadow: 0 0 0 4px #2b2b3a, 0 0 40px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 980px) {
+  #game-root {
+    width: 100vw;
+    height: 56.25vw;
+    transform-origin: top left;
+  }
+}
+
+#game-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#ui-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#ui-root.interactive {
+  pointer-events: auto;
+}
+
+/* ---------- shared UI kit ---------- */
+
+.panel {
+  background: linear-gradient(#1c1c2b, #12121c);
+  border: 3px solid #5a5a7a;
+  box-shadow: inset 0 0 0 2px #0a0a12, 0 4px 10px rgba(0,0,0,0.6);
+  color: #e8e4d8;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.pixel-btn {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(#3a3a52, #26263a);
+  border: 2px solid #6d6d94;
+  color: #f0ead6;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pixel-btn:hover:not(:disabled) {
+  background: linear-gradient(#4d4d6e, #34344c);
+  border-color: #a0a0d0;
+}
+
+.pixel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pixel-btn.danger { border-color: #a04040; }
+.pixel-btn.danger:hover:not(:disabled) { background: linear-gradient(#6e3434, #4c2424); }
+
+.hidden { display: none !important; }
+
+.title-text {
+  color: #e8c14c;
+  text-shadow: 2px 2px 0 #4a2f0a;
+  font-weight: bold;
+}
+
+.gold-text { color: #e8c14c; }
+.diamond-text { color: #5ad1e6; }
+.hp-text { color: #7ee06a; }
+.mp-text { color: #6aa8e0; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #12121c; }
+::-webkit-scrollbar-thumb { background: #5a5a7a; }

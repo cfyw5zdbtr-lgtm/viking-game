@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "viking-game-server",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", "C:\\Users\\weave\\AppData\\Local\\Temp\\claude\\C--Users-weave-OneDrive-claude-viking-game\\75356fcf-ae49-4b7d-bec8-d1a5a4c91a99\\scratchpad\\static-server.ps1",
+        "-Port", "8787",
+        "-Root", "C:\\Users\\weave\\OneDrive\\claude\\viking game"
+      ],
+      "port": 8787
+    }
+  ]
+}
